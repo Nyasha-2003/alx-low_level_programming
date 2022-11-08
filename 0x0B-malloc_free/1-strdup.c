@@ -3,7 +3,8 @@
 #include <stdlib.h>
 
 /**
- * str_concat -  returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
+ * str_concat -  returns a pointer to a newly allocated space
+ * in memory, which contains a copy of the string given as a param.
  * @str: This is the input string
  * Return: function returns a pointer to the duplicated string.
  */
