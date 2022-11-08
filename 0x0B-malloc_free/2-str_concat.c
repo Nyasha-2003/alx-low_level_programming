@@ -4,10 +4,13 @@
 
 /**
  * str_concat - function that concatenates two strings.
+ *              if NULL is passed, treat it as an empty string
+ *              The function should return NULL on failure
+ *
  * @s1: This is the output string
  * @s2: This is the input string
  * Return: The returned pointer should point to a newly allocated
- *         space in memory which contains contents of s1, followed
+ *         space in memory containing contents of s1, followed
  *         by the contents of s2 and null terminated.
  */
 char *str_concat(char *s1, char *s2)
