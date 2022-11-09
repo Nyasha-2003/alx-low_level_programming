@@ -1,47 +1,61 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * str_concat - function that concatenates two strings.
- *              if NULL is passed, treat it as an empty string
- *              The function should return NULL on failure
- *
- * @s1: This is the output string
- * @s2: This is the input string
- * Return: The returned pointer should point to a newly allocated
- *         space in memory containing contents of s1, followed
- *         by the contents of s2 and null terminated.
+ * _strlen - count array
+ * @s: array of element
+ * Return: 1
  */
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0') /*Count character of string*/
+	{
+		i++;
+	}
+
+	return (i);
+}
+/**
+ * str_concat - back a pointer to array
+ * @s1: Array one
+ * @s2: Array two
+ * Return: Always an array dinamic
+ */
+
 char *str_concat(char *s1, char *s2)
 {
-	int a, b;
-	char *s;
+	char *dst;
+	unsigned int i, j, size;
 
+	/*If array is empty*/
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
-	for (a = 0; s1[a] != '\0'; a++)
+
+	/*count size total*/
+	size = (_strlen(s1) + _strlen(s2) + 1);
+
+	/*malloc*/
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
 	{
-	}
-
-	s = (char *)  malloc(((a + b) + 1) * sizeof(char));
-
-	if (s == NULL)
 		return (NULL);
-	for (a = 0; s1[a] != '\0'; a++)
-	{
-		s[a] = s1[a];
 	}
-	for (b = 0; s2[b] != '\0'; b++)
+
+	/*Concatenate arrays*/
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dst + i) = *(st + i);
+	
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		s[a] = s2[b];
-		a++;
+		*(dst + i) = *(s2 + j);
+		i++;
 	}
-	return (s);
+
+	return (dst);
 }
+
